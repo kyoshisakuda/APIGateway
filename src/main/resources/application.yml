@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: apigateway
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8181/eureka
+
+zuul:
+  prefix: /api
+  ignoredServices: '*'
+  routes:
+    auth-service:
+      path: /demo-service/**
+      service-id: demo-service
+#    accounting-service:
+#      path: /accounting-service/**
+#      service-id: accounting-service
