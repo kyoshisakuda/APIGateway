@@ -15,8 +15,10 @@ zuul:
   ignoredServices: '*'
   routes:
     auth-service:
-      path: /demo-service/**
-      service-id: demo-service
+      path: /auth/**
+      service-id: auth-service
+      strip-prefix: false
+      sensitive-headers: Cookie,Set-Cookie
 #    accounting-service:
 #      path: /accounting-service/**
 #      service-id: accounting-service
