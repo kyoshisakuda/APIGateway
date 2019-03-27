@@ -11,14 +11,13 @@ eureka:
       defaultZone: http://localhost:8181/eureka
 
 zuul:
-  prefix: /api
   ignoredServices: '*'
   routes:
     auth-service:
       path: /auth/**
       service-id: auth-service
-      strip-prefix: false
-      sensitive-headers: Cookie,Set-Cookie
+      stripPrefix: false
+      sensitiveHeaders: Cookie,Set-Cookie
 #    accounting-service:
 #      path: /accounting-service/**
 #      service-id: accounting-service
